@@ -15,7 +15,7 @@ const MovieListRow = (props) => {
                         <div className="img-wrap">
                             <img
                                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                                alt={movie.name}
+                                alt={movie.title}
                             />
                         </div>
                     ))}

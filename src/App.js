@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import FeaturedMovie from './components/FeaturedMovie/FeaturedMovie';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import MovieListRow from './components/MovieList/MovieListRow';
 import TMDB from './TMDB';
@@ -68,6 +69,8 @@ const App = () => {
                     </section>
                 </div>
             </div>
+
+            <Footer />
         </>
     );
 };
