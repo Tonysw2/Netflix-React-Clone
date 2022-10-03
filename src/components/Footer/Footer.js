@@ -22,9 +22,9 @@ const Footer = () => {
             <div className="support-container">
                 <div className="wrap-support-links">
                     <div className="support-links">
-                        <a href="">Audio description</a>
-                        <a href="">Investors</a>
-                        <a href="">Legal notices</a>
+                        <a href="#">Audio description</a>
+                        <a href="#">Investors</a>
+                        <a href="#">Legal notices</a>
                     </div>
                 </div>
 

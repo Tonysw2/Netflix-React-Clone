@@ -1,30 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MovieListRow.css';
 
-const MovieListRow = (props) => {
+const MovieListRow = ({ categorieName, moviesList }) => {
+    const [translate, setTranslate] = useState(1);
+
+    const translateFunc = () => {
+        if (moviesList.length / translate > 5 && translate > 0) {
+            return `translateX(calc(${translate} * (-100% + 5rem)))`;
+        } else if (moviesList.length / translate < 5) {
+            setTranslate(1);
+            return 'translateX(0%)';
+        }
+    };
+
     return (
-        <div className="container">
-            <h3>{props.categorieName}</h3>
-            <div className="movie-list">
-                <div className="arrow-left">
+        <>
+            <h3 className="categorie-name">{categorieName}</h3>
+            <div className="container">
+                <div
+                    className="arrow arrow-left"
+                    onClick={() => {
+                        setTranslate((prev) => prev - 1);
+                    }}
+                >
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </div>
-
-                {props.moviesList.length > 0 &&
-                    props.moviesList.map((movie, key) => (
-                        <div className="img-wrap">
-                            <img
-                                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                                alt={movie.title}
-                            />
-                        </div>
+                <div
+                    className="slider"
+                    style={{
+                        transform: translateFunc(),
+                    }}
+                >
+                    {moviesList.map((movie) => (
+                        <img
+                            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                            alt={`${movie}`}
+                        />
                     ))}
-
-                <div className="arrow-right">
+                </div>
+                <div
+                    className="arrow arrow-right"
+                    onClick={() => {
+                        setTranslate((prev) => prev + 1);
+                    }}
+                >
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
