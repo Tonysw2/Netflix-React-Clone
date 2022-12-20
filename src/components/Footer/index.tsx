@@ -15,16 +15,16 @@ export function Footer() {
   return (
     <FooterContainer>
       <SocialMediaContainer>
-        <a href="https://www.facebook.com/netflixbrasil">
+        <a href="#">
           <FacebookLogo />
         </a>
-        <a href="https://www.instagram.com/NetflixBrasil">
+        <a href="ht#">
           <InstagramLogo />
         </a>
-        <a href="https://twitter.com/NetflixBrasil">
+        <a href="#">
           <TwitterLogo />
         </a>
-        <a href="https://www.youtube.com/user/NetflixBRA">
+        <a href="#">
           <YoutubeLogo />
         </a>
       </SocialMediaContainer>
